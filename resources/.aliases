@@ -1,0 +1,64 @@
+# Enable aliases to be sudo’ed
+alias sudo="sudo "
+
+# Shell helpers
+alias c="clear"
+alias h="history"
+
+alias e="$EDITOR"
+alias v="$VISUAL"
+
+# Neovim as Vim
+alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# List all files colorized in long format, excluding hidden files
+alias l="ls -lF -G"
+
+# List only directories
+alias ld="ls -lF -G"
+
+# List all files colorized in long format, including hidden files
+alias ll="ls -laF -G"
+
+# Color output for `ls`
+alias ls="command ls -G"
+
+# Copy current path to clipboard
+alias cpwd="pwd | tr -d '[:space:]' | pbcopy"
+
+# Make a directory (if it doesn't already exist)
+alias mkdir="mkdir -p"
+
+# Bundler
+alias bundle-exec="bundle exec"
+alias bundle-install="bundle install"
+
+# Reload shell
+alias reload="source ~/.bash_profile"
+
+# Pretty print $PATH
+alias path='echo $PATH | tr -s ":" "\n"'
+
+# Ping
+alias ping="ping -c 20"
+
+# Show/hide hidden files in Finder
+alias showall="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hideall="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# IP addresses
+alias ip="curl ipecho.net/plain ; echo"
+alias localip="ipconfig getifaddr en0"
+
+# Get OS X Software Updates, Homebrew, Cask and NPM
+alias appup="softwareupdate -i -a"
+alias brew-update="brew --version; brew update; brew upgrade; brew cleanup --prune=30; brew doctor; brew --version"
+alias cask-update="brew --version; brew cu --all; brew cleanup; brew --version"
+alias npm-update="npm -v; npm install npm -g; npm outdated -g --depth=0; npm update -g; npm -v"
+alias update-all="brewup; caskup; npmup"
